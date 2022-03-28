@@ -69,10 +69,12 @@
             </button>
         </div>
     </section>
-    <section class="row log" v-if="logs.length > 0">
+    <section class="row log" v-if="turns.length > 0">
         <div class="small-12 columns">
             <ul>
-                <li v-for="log in logs">
+                <li v-for="turn in turns" 
+                    :class="{'player-turn' : turn.isPlayer, 'monster-turn' : !turn.isPlayer}">
+                    {{ turn.text  }}
                 </li>
             </ul>
         </div>
